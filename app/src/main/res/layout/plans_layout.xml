@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_alignParentRight="true"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50%"
+                    android:textColor="#904799"
+                    android:textSize="25dp"
+                    android:id="@+id/circularSeekBarVal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    />
+                <me.tankery.lib.circularseekbar.CircularSeekBar
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:cs_progress = "50"
+                    app:cs_negative_enabled="true"
+                    app:cs_circle_style="round"
+                    app:cs_circle_stroke_width="6dp"
+                    app:cs_pointer_stroke_width="15dp"
+                    app:cs_circle_progress_color = "#904799"
+                    app:cs_pointer_color = "#904799"
+                    app:cs_circle_color = "#EFEFEF"
+                    android:id="@+id/circularSeekBar"
+                    app:cs_pointer_halo_width="2dp">
+
+                </me.tankery.lib.circularseekbar.CircularSeekBar>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plan A"
+                    android:textColor="#904799"
+                    android:textSize="20dp"
+                    android:id="@+id/planNameText"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/planNameText"
+                    android:id="@+id/planLocationText"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="15dp"
+                    android:text="Cairo"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/planLocationText"
+                    android:id="@+id/planNOGuestsText"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="15dp"
+                    android:text="400+ family and friends"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/planNOGuestsText"
+                    android:id="@+id/planBudgetText"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="15dp"
+                    android:textSize="15dp"
+                    android:text="Planned Cost: 100000 L.E"
+                    android:textColor="#000"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

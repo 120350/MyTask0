@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyTask</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="cities">
+        <item>Cairo</item>
+        <item>Giza</item>
+        <item>Tanta</item>
+        <item>Mansoura</item>
+        <item>Sadat</item>
+        <item>Harm</item>
+        <item>Alexandria</item>
+        <item>Aswan</item>
+    </string-array>
+</resources>
