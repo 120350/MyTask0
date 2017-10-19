@@ -194,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // load old image
         loadOldImage();
 
