@@ -21,16 +21,12 @@ import java.util.ArrayList;
  */
 public class tibsAdapter extends RecyclerView.Adapter<tibsAdapter.ViewHolder>{
 
-    ArrayList<String> tibsImages;
-    ArrayList<String> tibsTitles;
-    ArrayList<String> tibsIds;
+    ArrayList<tibsModel> models;
     Context context;
 
-    public tibsAdapter(Context context, ArrayList<String> tibsIds, ArrayList<String> tibsImages, ArrayList<String> tibsTitles) {
+    public tibsAdapter(Context context, ArrayList<tibsModel> models) {
         this.context = context;
-        this.tibsIds = tibsIds;
-        this.tibsImages = tibsImages;
-        this.tibsTitles = tibsTitles;
+        this.models = models;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -47,6 +43,7 @@ public class tibsAdapter extends RecyclerView.Adapter<tibsAdapter.ViewHolder>{
     }
     @Override
     public tibsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //define recyclerview layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tibs_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
@@ -54,9 +51,10 @@ public class tibsAdapter extends RecyclerView.Adapter<tibsAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.tibsIdText.setText(tibsIds.get(position));
-        holder.tibsTitleText.setText(tibsTitles.get(position));
-        final String imgs = tibsImages.get(position);
+        // update view
+        holder.tibsIdText.setText(models.get(position).getTibsID());
+        holder.tibsTitleText.setText(models.get(position).getTibsTitles());
+        final String imgs = models.get(position).getTibsImages();
         final Context context = holder.tibsImage.getContext();
         Picasso.with(context)
                 .load(Uri.parse("http://www.thejerb.com/jerb/public/uploads/tips/" + imgs))
@@ -81,6 +79,6 @@ public class tibsAdapter extends RecyclerView.Adapter<tibsAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return tibsIds.size();
+        return models.size();
     }
 }

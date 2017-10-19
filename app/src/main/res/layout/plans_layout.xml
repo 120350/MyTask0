@@ -32,22 +32,13 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     />
-                <me.tankery.lib.circularseekbar.CircularSeekBar
+                <ImageView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:cs_progress = "50"
-                    app:cs_negative_enabled="true"
-                    app:cs_circle_style="round"
-                    app:cs_circle_stroke_width="6dp"
-                    app:cs_pointer_stroke_width="15dp"
-                    app:cs_circle_progress_color = "#904799"
-                    app:cs_pointer_color = "#904799"
-                    app:cs_circle_color = "#EFEFEF"
-                    android:id="@+id/circularSeekBar"
-                    app:cs_pointer_halo_width="2dp">
+                    android:id="@+id/imgPlans"
+                    />
 
-                </me.tankery.lib.circularseekbar.CircularSeekBar>
             </RelativeLayout>
 
             <RelativeLayout

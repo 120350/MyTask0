@@ -1,166 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     android:background="#EFEFEF"
     android:id="@+id/mainContainer"
-    android:descendantFocusability="blocksDescendants"
     tools:context="com.example.mohamedashour.mytask.MainActivity">
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/appBarLayout"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:fitsSystemWindows="true"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:id="@+id/mCollapsingToolbar"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:contentScrim="#EFEFEF"
+                app:titleEnabled="false"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
 
-        <include android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/toolbar_layout"
-            android:fitsSystemWindows="true">
-        </include>
+                <android.support.v7.widget.Toolbar
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:background="#904799"
+                    android:id="@+id/toolBBar"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    >
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/logo"/>
+
+                </android.support.v7.widget.Toolbar>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:scaleType="fitXY"
+                        android:id="@+id/coverPhoto"
+                        android:src="@drawable/cover_photo"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/timerContainer"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20dp"
+                                android:text="Days"
+                                android:textColor="#000"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txtDays"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:textSize="35dp"
+                                android:text="00"
+                                android:textColor="#000"/>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20dp"
+                                android:text="Hours"
+                                android:textColor="#000"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txtHours"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:textSize="35dp"
+                                android:text="00"
+                                android:textColor="#000"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20dp"
+                                android:text="Mins"
+                                android:textColor="#000"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txtMins"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:textSize="35dp"
+                                android:text="00"
+                                android:textColor="#000"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="20dp"
+                                android:text="Sec"
+                                android:textColor="#000"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txtSec"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="15dp"
+                                android:textSize="35dp"
+                                android:text="00"
+                                android:textColor="#000"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/addCoverText"
+                        android:layout_below="@+id/timerContainer"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_alignParentRight="true"
+                        android:textSize="20dp"
+                        android:text="ADD COVER"
+                        android:textColor="#904799"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/appBarLayout">
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:id="@+id/weddingDateContainer"
-                android:background="@drawable/cover_photo"
-                >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/timerContainer"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:textSize="20dp"
-                            android:text="Days"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/txtDays"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:textSize="35dp"
-                            android:text="00"
-                            android:textColor="#000"/>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:textSize="20dp"
-                            android:text="Hours"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/txtHours"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:textSize="35dp"
-                            android:text="00"
-                            android:textColor="#000"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:textSize="20dp"
-                            android:text="Mins"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/txtMins"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:textSize="35dp"
-                            android:text="00"
-                            android:textColor="#000"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20dp"
-                            android:text="Sec"
-                            android:textColor="#000"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/txtSec"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="15dp"
-                            android:textSize="35dp"
-                            android:text="00"
-                            android:textColor="#000"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/addCoverText"
-                    android:layout_below="@+id/timerContainer"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_alignParentRight="true"
-                    android:textSize="20dp"
-                    android:text="ADD COVER"
-                    android:textColor="#904799"/>
-
-            </RelativeLayout>
-
-
-            <ListView
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="135dp"
+                android:layout_height="160dp"
                 android:clipToPadding="false"
+                android:visibility="gone"
                 android:layout_marginTop="20dp"
                 android:id="@+id/plansCardView"
-                android:layout_below="@+id/weddingDateContainer"
                 />
 
             <TextView
@@ -180,7 +217,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="180dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:layout_below="@+id/tibsBeforeWedding"
                 android:id="@+id/tibs_recyclerView"
@@ -218,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:clipToPadding="false"
                 android:layout_below="@+id/toDoListContainer"
                 android:id="@+id/todolist_recyclerView"
@@ -230,7 +267,7 @@
 
         </RelativeLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -239,7 +276,7 @@
         android:src="@mipmap/plus"
         android:id="@+id/fab"
         android:layout_margin="15dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_gravity="bottom|right"
+        />
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

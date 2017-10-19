@@ -1,6 +1,7 @@
 package com.example.mohamedashour.mytask;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,48 +18,44 @@ import java.util.ArrayList;
  */
 public class toDoListAdapter extends RecyclerView.Adapter<toDoListAdapter.ViewHolder>{
 
-    ArrayList<String> toDoListTitles;
-    ArrayList<String> toDoListIds;
+    ArrayList<toDoListModel> models;
     Context context;
 
-    public toDoListAdapter(Context context, ArrayList<String> toDoListIds, ArrayList<String> toDoListTitles) {
+    public toDoListAdapter(Context context, ArrayList<toDoListModel> models) {
         this.context = context;
-        this.toDoListIds = toDoListIds;
-        this.toDoListTitles = toDoListTitles;
+        this.models = models;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView  toDoListTitleText;
-        public CheckBox checkBox;
-
+        TextView  toDoListTitleText;
+        CheckBox checkBox;
+        CardView todolistCardView;
         public ViewHolder(View v) {
             super(v);
             toDoListTitleText = (TextView) v.findViewById(R.id.toDoListTitleText);
             checkBox = (CheckBox) v.findViewById(R.id.toDoListCheckBox);
+            todolistCardView = (CardView) v.findViewById(R.id.todolistCardView);
         }
     }
 
     @Override
     public toDoListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //define recyclerview layout
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.todolist_layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.toDoListTitleText.setText(toDoListTitles.get(position));
-        int num = Integer.parseInt(toDoListIds.get(position));
-        if (num % 2 == 0){
-            holder.checkBox.setChecked(true);
-        }else {
-            holder.checkBox.setChecked(false);
-        }
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        // update view
+        holder.toDoListTitleText.setText(models.get(position).getTitle());
+        holder.checkBox.setChecked(false);
     }
 
     @Override
     public int getItemCount() {
-        return toDoListIds.size();
+        return models.size();
     }
 }
